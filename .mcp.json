@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "scaleskus": {
+      "type": "http",
+      "url": "https://scaleskus.com/mcp"
+    }
+  }
+}
