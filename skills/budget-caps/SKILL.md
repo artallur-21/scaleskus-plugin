@@ -1,16 +1,16 @@
 ---
+name: budget-caps
 description: Find Amazon Ads campaigns that run out of budget while performing well, and queue safe budget raises through ScaleSKUs. Use when the user asks which campaigns are budget-capped or running out of budget, what capping is costing them, or whether to raise budgets.
-argument-hint: "[account name]"
 ---
 
 # Budget caps
 
 Find the efficient, in-stock campaigns that stop showing because their budget runs out, and hand back a numbered plan of budget raises the user can queue for approval.
 
-1. **Account.** Use the account the user named, including one typed after the command. Otherwise call `list_profiles`: use the only account if there is one, or ask which. Use the returned `profile_id` exactly as given.
+1. **Account.** Use the account the user named. Otherwise call `list_profiles`: use the only account if there is one, or ask which. Use the returned `profile_id` exactly as given.
 2. **Run the workflow.** Call `run_workflow` with `workflow="uncap_budgets"` and the `profile_id`, adding `max_acos` if the user gave a target ACoS. Without it, the workflow judges "efficient" against a default target and says so; tell the user and offer to re-run with theirs. It returns capped campaigns that are efficient and in stock, with Amazon's missed-sales estimate and a proposed raise.
 3. **Check before presenting.**
-   - Raise budget only where ACoS is healthy. On an inefficient campaign more budget buys more waste; the fix is bids or negatives (offer the fix-bids or cut-waste command instead).
+   - Raise budget only where ACoS is healthy. On an inefficient campaign more budget buys more waste; the fix is bids or negatives (offer the fix-bids or cut-waste skill instead).
    - Judge capping over at least 14 days, not one capped day.
    - Leave out campaigns whose products are low on stock or have listing problems.
    - If the user's total budget is fixed, suggest moving budget from over-target, under-used campaigns (`get_budget_analysis`) instead of adding money.

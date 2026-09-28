@@ -1,13 +1,13 @@
 ---
+name: cut-waste
 description: Find Amazon Ads spend that isn't selling and queue fit-checked negatives through ScaleSKUs. Use when the user wants to cut wasted ad spend, lower ACoS, find negative keywords, or stop paying for searches that don't convert.
-argument-hint: "[account name]"
 ---
 
 # Cut wasted spend
 
 Find the search terms and targets that spend without selling on one account, judge each one against what the product actually is, and hand back a numbered negation plan the user can queue for approval.
 
-1. **Account.** Use the account the user named, including one typed after the command. Otherwise call `list_profiles`: use the only account if there is one, or ask which. Use the returned `profile_id` exactly as given.
+1. **Account.** Use the account the user named. Otherwise call `list_profiles`: use the only account if there is one, or ask which. Use the returned `profile_id` exactly as given.
 2. **Run the workflow.** Call `run_workflow` with `workflow="cut_waste"` and the `profile_id`, adding `max_acos` if the user gave a target ACoS. It scans weeks of data and can take up to about 40 seconds. If the account also runs Sponsored Brands, run it again with `ad_product="SB"`.
 3. **Judge fit before presenting.** Each negate item carries fit evidence: what the campaign sells and the price signal. Keep an item only when the search clearly doesn't fit the product.
    - A relevant search that simply hasn't converted yet is a bid or watchlist decision, not a negative.

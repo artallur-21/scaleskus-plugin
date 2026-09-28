@@ -1,8 +1,8 @@
 {
   "name": "scaleskus",
   "displayName": "ScaleSKUs",
-  "version": "1.1.0",
-  "description": "Amazon Ads optimization with the ScaleSKUs connector: a product-aware account audit, a prompt builder that turns rough requests into complete ScaleSKUs prompts, plus commands to cut wasted spend, grow sales from converting search terms, fix bids, unlock budget-capped campaigns, explain sales drops and run a weekly review. Changes are queued for your approval by default.",
+  "version": "1.2.0",
+  "description": "Amazon Ads optimization with the ScaleSKUs connector: a product-aware account audit, a prompt builder that turns rough requests into complete ScaleSKUs prompts, and skills to cut wasted spend, grow sales from converting search terms, fix bids, unlock budget-capped campaigns, explain sales drops and run a weekly review. Changes are queued for your approval by default.",
   "author": {
     "name": "Artallur Technologies India LLP",
     "email": "support@scaleskus.com",

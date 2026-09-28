@@ -1,13 +1,13 @@
 ---
+name: sales-drop
 description: Explain why Amazon sales or ad sales dropped, using ScaleSKUs data, with causes such as bid or budget cuts, paused ads, stock-outs, listing problems or organic decline ranked by money lost. Use when the user says sales are down, orders fell, revenue dropped, or asks what changed in their Amazon account.
-argument-hint: "[account name] [period]"
 ---
 
 # Why sales dropped
 
 Find the cause before prescribing anything. Most drops trace to something nameable: a bid or budget cut, a paused campaign, a stock-out, a listing problem, or data that hasn't settled yet.
 
-1. **Account and period.** Use the account the user named, including one typed after the command. Otherwise call `list_profiles`: use the only account if there is one, or ask which. Use the returned `profile_id` exactly as given. Compare the period the user means with the one before it, and state both windows.
+1. **Account and period.** Use the account the user named. Otherwise call `list_profiles`: use the only account if there is one, or ask which. Use the returned `profile_id` exactly as given. Compare the period the user means with the one before it, and state both windows.
 2. **Run the workflow.** Call `run_workflow` with `workflow="sales_drop"` and the `profile_id`. It ranks root causes by money lost and changes nothing.
 3. **Settle what the workflow leaves open.** Use only the reads that answer an open question:
    - Is the data complete? `get_sync_status`. A drop in the last 2–3 days may be late attribution or retail data that hasn't arrived yet (retail reports trail ad data by 2–3 days).

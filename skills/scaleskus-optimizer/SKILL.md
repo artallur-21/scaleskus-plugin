@@ -7,7 +7,7 @@ description: Product-aware Amazon Ads optimization with the ScaleSKUs connector.
 
 This skill turns ScaleSKUs data into decisions for one Amazon Ads account: understand what the account sells, examine spend and demand at the product (ASIN) and keyword level, and deliver a report the owner can act on. ScaleSKUs tools retrieve and compute; the analysis, the fit judgments and the explanation happen here. Every verdict cites a number a tool returned.
 
-Scale the effort to the question. A quick question ("what was my ACoS last week?") gets the one tool that answers it — see [references/tools.md](references/tools.md). Single jobs have their own commands in this plugin (cut-waste, grow-sales, fix-bids, budget-caps, sales-drop, weekly-review), each running the matching ScaleSKUs workflow. Run the full audit below only when the user asks for an audit, a report or a review of every lever. The ground rules and [references/changes.md](references/changes.md) apply to all of them.
+Scale the effort to the question. A quick question ("what was my ACoS last week?") gets the one tool that answers it — see [references/tools.md](references/tools.md). Single jobs have their own skills in this plugin (cut-waste, grow-sales, fix-bids, budget-caps, sales-drop, weekly-review), each running the matching ScaleSKUs workflow. Run the full audit below only when the user asks for an audit, a report or a review of every lever. The ground rules and [references/changes.md](references/changes.md) apply to all of them.
 
 ## Ground rules
 

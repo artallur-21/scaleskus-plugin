@@ -1,13 +1,13 @@
 ---
+name: fix-bids
 description: Right-size Amazon Ads keyword and target bids through ScaleSKUs, with cuts where ACoS runs above target and raises for efficient winners, each with the maths behind it, queued for approval. Use when the user asks to fix their bids, says some keywords cost too much or ACoS is too high on them, or thinks winners are under-bid.
-argument-hint: "[account name] [target ACoS]"
 ---
 
 # Fix bids
 
 Compute bid changes from the user's target ACoS, check each one has enough data behind it, and hand back a numbered bid plan the user can queue for approval.
 
-1. **Account and target.** Use the account the user named, including one typed after the command. Otherwise call `list_profiles`: use the only account if there is one, or ask which. Use the returned `profile_id` exactly as given. If the user gave a target ACoS, give it as `max_acos`. Without one, the workflow uses a default target and says so; tell the user, and offer to re-run with their own target (break-even ACoS = unit margin ÷ price).
+1. **Account and target.** Use the account the user named. Otherwise call `list_profiles`: use the only account if there is one, or ask which. Use the returned `profile_id` exactly as given. If the user gave a target ACoS, give it as `max_acos`. Without one, the workflow uses a default target and says so; tell the user, and offer to re-run with their own target (break-even ACoS = unit margin ÷ price).
 2. **Run the workflow.** Call `run_workflow` with `workflow="fix_bids"` and the `profile_id`. It returns bid cuts for keywords above target and raises for efficient winners, each computed from revenue per click × target ACoS in capped steps. It can take up to about 40 seconds.
 3. **Check before presenting.** Move an item to a watchlist instead of the plan when:
    - it has fewer than ~10 clicks and no order behind it, or less than 7 days of data;
