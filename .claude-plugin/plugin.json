@@ -11,6 +11,9 @@
   "homepage": "https://scaleskus.com/docs/mcp",
   "repository": "https://github.com/artallur-21/scaleskus-plugin",
   "privacyPolicyUrl": "https://scaleskus.com/privacy-policy",
+  "termsOfServiceUrl": "https://scaleskus.com/terms",
+  "supportUrl": "https://scaleskus.com/contact",
+  "documentationUrl": "https://scaleskus.com/docs/mcp",
   "license": "MIT",
   "keywords": [
     "amazon-ads",
