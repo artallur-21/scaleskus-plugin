@@ -4,8 +4,9 @@ Audit and optimize your Amazon Ads account with Claude, using your ScaleSKUs dat
 
 ## What's included
 
-**Skill**
+**Skills**
 
+- `scaleskus-prompt-builder`: turns a rough or mixed-language request ("acos high hai fix karo", "why sales down") into one complete ScaleSKUs prompt: the account, goal, date window, ad types and campaigns in scope, targets, the answer you want and what may change. With the ScaleSKUs connector on, Claude offers to run the prompt it wrote.
 - `scaleskus-optimizer`: a product-aware audit of one advertising account. It maps what the account sells, then looks for wasted spend, under-funded winners, category search terms the account doesn't advertise yet, and bid, budget and placement efficiency. The result is an owner-readable report in which every recommendation names a product and a keyword. The skill also carries the ground rules Claude follows for any ScaleSKUs question.
 
 **Commands.** In Claude Code and Cowork, run them as `/scaleskus:<command>`. In Claude chat they load as skills and Claude applies them when your request fits.
@@ -33,6 +34,7 @@ Audit and optimize your Amazon Ads account with Claude, using your ScaleSKUs dat
 
 ## Try it
 
+- "Structure this for ScaleSKUs: my ACoS is too high, fix it."
 - "Give me a briefing on my Amazon Ads account."
 - "Audit my account and write an optimization report."
 - "Which search terms wasted the most spend last month?" or `/scaleskus:cut-waste`
