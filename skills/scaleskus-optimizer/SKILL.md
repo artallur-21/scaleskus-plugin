@@ -11,7 +11,7 @@ Scale the effort to the question. A quick question ("what was my ACoS last week?
 
 ## Ground rules
 
-1. **One account at a time.** If the user hasn't said which account, call `list_profiles`: use the only one if there is one, otherwise ask. Pass `profile_id` and every other id a tool returns (campaign, ad group, keyword, target, task ids, `plan_ref`) back exactly as returned. They are opaque handles: never invent, convert or rebuild one. Resolve a name to its handle with `find_entity`.
+1. **One account at a time.** If the user hasn't said which account, call `list_profiles`: use the only one if there is one, otherwise ask. Reuse `profile_id` and every other id a tool returns (campaign, ad group, keyword, target, task ids, `plan_ref`) exactly as returned. They are opaque handles: never invent, convert or rebuild one. Resolve a name to its handle with `find_entity`.
 2. **Numbers only from tool results.** Don't estimate a metric no tool returned. If a figure is missing, say which read would settle it.
 3. **Name the window and the freshness.** Give the date range behind every number. Before a full audit, check `get_sync_status`, and mention freshness only if it flags a problem. The last ~2 days of ad data are provisional because Amazon attributes sales late. Retail (Sales & Traffic) data normally lags ad data by 2–3 days, so say when a TACoS figure mixes windows.
 4. **Each account's own currency.** Report money in the currency the account reports in (`list_profiles` returns it). Never convert, and never add up money across accounts that use different currencies.
@@ -26,7 +26,7 @@ Run them in order. End each with a visible checkpoint: a heading plus a table or
 
 ### 1. Scope, then understand the products
 
-Settle the account; the ad products it uses (Sponsored Products, Brands, Display); the window (default last 30 days, last 7 for the freshest signal); the objective (full audit by default, or defend efficiency, scale revenue, recover from a drop); and the target ACoS. Use the user's target if they gave one, and pass it to workflows as `max_acos`. Without one, the workflows fall back to a default target and say so: tell the user which target was used, and ask for theirs when bids or budgets depend on it (break-even ACoS = unit margin ÷ price).
+Settle the account; the ad products it uses (Sponsored Products, Brands, Display); the window (default last 30 days, last 7 for the freshest signal); the objective (full audit by default, or defend efficiency, scale revenue, recover from a drop); and the target ACoS. Use the user's target if they gave one, and give it to workflows as `max_acos`. Without one, the workflows fall back to a default target and say so: tell the user which target was used, and ask for theirs when bids or budgets depend on it (break-even ACoS = unit margin ÷ price).
 
 Then read the catalog so the whole audit is product-aware:
 

@@ -44,7 +44,7 @@ Reading the numbers:
 
 ## Conventions
 
-- `run_workflow` takes `profile_id`, a `workflow` name, and optionally `max_acos` (the user's target ACoS) or `request` (the user's own words, when the right workflow is unclear). Without `max_acos`, workflows use a default target and say so in their answer; pass the user's target when they have one. Prefer `run_workflow` to chaining many reads for a standard job.
+- `run_workflow` takes `profile_id`, a `workflow` name, and optionally `max_acos` (the user's target ACoS) or `request` (the user's own words, when the right workflow is unclear). Without `max_acos`, workflows use a default target and say so in their answer; give them the user's target when they have one. Prefer `run_workflow` to chaining many reads for a standard job.
 - Many performance reads cover one ad product per call (for example `ad_product="SB"`), and Sponsored Display has no keyword or search-term report. Run each ad product the account uses and skip the ones it doesn't.
 - Rate-sorted rankings apply a minimum-clicks floor (default 10) so tiny samples can't top a list. Keep it on for verdicts.
 - Keep reads focused: the account, a date range, and a limit (the top 25–50 movers) rather than whole tails. Page large lists instead of asking for everything at once.
