@@ -10,6 +10,7 @@
   },
   "homepage": "https://scaleskus.com/docs/mcp",
   "repository": "https://github.com/artallur-21/scaleskus-plugin",
+  "privacyPolicyUrl": "https://scaleskus.com/privacy-policy",
   "license": "MIT",
   "keywords": [
     "amazon-ads",

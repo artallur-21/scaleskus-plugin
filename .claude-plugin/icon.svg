@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="ScaleSKUs">
+  <rect width="256" height="256" fill="#1B1A17"/>
+  <path d="M162 88 C 158 70 142 60 116 60 C 86 60 66 74 66 98 C 66 124 90 130 116 136 C 144 142 158 150 158 170 C 158 188 140 198 116 198 C 90 198 72 188 68 166" fill="none" stroke="#F1F1EF" stroke-width="30" stroke-linejoin="round"/>
+  <rect x="165" y="158" width="40" height="40" fill="#E3261C"/>
+</svg>
